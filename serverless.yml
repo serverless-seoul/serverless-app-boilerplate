@@ -1,0 +1,33 @@
+service: serverless-app-boilerplate
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: prod
+  region: ap-northeast-2
+
+plugins:
+  - serverless-prune-plugin
+
+custom:
+  prune:
+    automatic: true
+    number: 5
+
+package:
+  artifact: dst.zip
+
+functions:
+  api:
+    timeout: 30
+    memorySize: 256
+    handler: api.handler
+    events:
+      - http:
+          path: /{proxy+}
+          method: any
+
+  cron:
+    timeout: 30
+    memorySize: 256
+    handler: cron.handler
