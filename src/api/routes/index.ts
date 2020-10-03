@@ -1,7 +1,7 @@
-import { Routes } from "vingle-corgi";
+import { Routes } from "@serverless-seoul/corgi";
 
-import { route as HealthRoute } from "./health";
+import { route as TodoRoute } from "./todo";
 
 export const routes: Routes = [
-  HealthRoute,
+  TodoRoute,
 ];

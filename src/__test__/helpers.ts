@@ -2,7 +2,7 @@ import {
   Namespace,
   Router,
   Routes,
-} from "vingle-corgi";
+} from "@serverless-seoul/corgi";
 
 export function createResolver(routes: Routes) {
   const resolver = function resolve(
